@@ -1,0 +1,82 @@
+1.
+SELECT *
+FROM Customers
+
+2. 
+SELECT DISTINCT country
+FROM customers;
+
+3. 
+SELECT *
+FROM Customers
+WHERE CustomerID LIKE 'BL%';
+
+4. 
+SELECT *
+FROM Orders
+LIMIT 100;
+
+5. 
+SELECT *
+FROM Customers
+WHERE PostalCode=('1010') OR ('3012') OR ('12209') OR ('05023');
+
+6. 
+SELECT *
+FROM Orders
+WHERE ShipRegion IS NOT NULL;
+
+7. 
+SELECT *
+FROM Customers
+ORDER BY COUNTRY, CITY;
+
+8. 
+INSERT INTO Customers (CustomerID, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax, Image, ImageThumbnail)
+VALUES ('PORTA', 'Porta Potty Pros', 'John', 'Director', '355 Walnut Ln', 'Detroit', 'Midwest', '48226', 'Brazil', '(330)233-3028', '(546)553-3332', NULL, NULL);
+
+9. 
+UPDATE Orders
+SET ShipRegion= 'EuroZone'
+WHERE ShipCountry='France';
+
+10.
+DELETE FROM `order details`
+WHERE Quantity =1.0;
+
+11. 
+SELECT MAX(quantity), AVG(quantity), MIN(quantity)
+FROM `order details`;
+
+12. 
+SELECT MAX(quantity), AVG(quantity), MIN(quantity)
+FROM `order details`
+ORDER BY ORDERID;
+  
+13. 
+SELECT * FROM orders 
+WHERE OrderID ='10290';
+
+14. 
+SELECT *
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+SELECT *
+FROM Orders
+LEFT JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+SELECT *
+FROM Orders
+RIGHT JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+15. 
+SELECT *
+FROM employees
+WHERE ReportsTo IS NULL;
+
+16.
+SELECT *
+FROM employees
+WHERE ReportsTo = '2';
+
